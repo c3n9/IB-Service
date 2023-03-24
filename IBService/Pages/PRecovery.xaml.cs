@@ -29,6 +29,7 @@ namespace IBService.Pages
             App.MainWindowInstance.BBack.Visibility = Visibility.Visible;
             contextUser = user;
             DataContext = contextUser;
+            App.MainWindowInstance.BBack.Visibility = Visibility.Visible;
         }
     }
 }
