@@ -26,14 +26,19 @@ namespace IBService.Pages
         {
             InitializeComponent();
             employee = user;
-            CBType.ItemsSource = App.DB.Type.ToList();
-            DGUsers.ItemsSource = App.DB.User.Where(u => u.Login == null).ToList();
+            Refresh();
             //TBFullName.Text = $"{user.Surname} {user.Name[0]}. {user.Patronymic[0]}.";
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
             App.DB.SaveChanges();
+            Refresh();
+        }
+        private void Refresh()
+        {
+            CBType.ItemsSource = App.DB.Type.ToList();
+            DGUsers.ItemsSource = App.DB.User.Where(u => u.Login == null || u.Type == null || u.Password == null || u.SecretWord == null).ToList();
         }
     }
 }

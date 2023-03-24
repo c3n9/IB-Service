@@ -27,3 +27,32 @@ C:\Users\quart\source\repos\IBService\IBService\obj\Debug\IBService.exe
 C:\Users\quart\source\repos\IBService\IBService\obj\Debug\IBService.pdb
 C:\Users\quart\source\repos\IBService\IBService\obj\Debug\Pages\PSecurityManagement.g.cs
 C:\Users\quart\source\repos\IBService\IBService\obj\Debug\Pages\PSecurityManagement.baml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\IBService.exe.config
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\IBService.exe
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\IBService.pdb
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\EntityFramework.dll
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\EntityFramework.xml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.csproj.AssemblyReference.cache
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.csproj.SuggestedBindingRedirects.cache
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\MainWindow.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PLogin.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PRecovery.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PSecurityManagement.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\App.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService_Content.g.cs
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService_MarkupCompile.cache
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService_MarkupCompile.lref
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\MainWindow.baml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PLogin.baml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PRecovery.baml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\Pages\PSecurityManagement.baml
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.g.resources
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.Properties.Resources.resources
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.csproj.GenerateResource.cache
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.csproj.CoreCompileInputs.cache
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.csproj.CopyComplete
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.exe
+C:\Users\Asus\OneDrive\Рабочий стол\Guardian\IB-Service\IBService\obj\Debug\IBService.pdb
