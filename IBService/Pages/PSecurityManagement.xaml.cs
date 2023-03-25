@@ -27,7 +27,7 @@ namespace IBService.Pages
             InitializeComponent();
             employee = user;
             Refresh();
-            //TBFullName.Text = $"{user.Surname} {user.Name[0]}. {user.Patronymic[0]}.";
+            TBFullName.Text = $"{user.Surname} {user.Name[0]}. {user.Patronymic[0]}.";
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
@@ -40,9 +40,11 @@ namespace IBService.Pages
             App.MainWindowInstance.BBack.Visibility = Visibility.Visible;
             CBType.ItemsSource = App.DB.Type.ToList();
             if (TCManagment.SelectedIndex == 0)
+                BSave.Content = "Одобрить";
                 DGUsersVerification.ItemsSource = App.DB.User.Where(u => u.Login == null || u.Type == null || u.Password == null || u.SecretWord == null || u.Approved == false).ToList();
             if (TCManagment.SelectedIndex == 1)
-                DGUsersMandats.ItemsSource = App.DB.User.Where(u => u.Approved == true && ((u.AddData == null || u.AddData == false) || (u.ViewData == null || u.ViewData == false) || (u.Reports == null || u.Reports == false ))).ToList();
+                BSave.Content = "Применять";
+                DGUsersMandats.ItemsSource = App.DB.User.Where(u => u.Approved == true && u.AddData == null && u.ViewData == null && u.Reports == null ).ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -50,12 +52,13 @@ namespace IBService.Pages
             Refresh();
         }
 
-        private void TCManagment_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //if (TCManagment.SelectedIndex == 0)
-            //    BSave.Content = "Одобрить";
-            //if (TCManagment.SelectedIndex == 1)
-            //    BSave.Content = "Применять";
-        }
+        //private void TCManagment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (TCManagment.SelectedIndex == 0)
+        //        BSave.Content = "Одобрить";
+        //    if (TCManagment.SelectedIndex == 1)
+        //        BSave.Content = "Применять";
+        //    Refresh();
+        //}
     }
 }

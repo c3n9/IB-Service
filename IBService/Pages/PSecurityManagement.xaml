@@ -1,138 +1,139 @@
 ﻿<Page x:Class="IBService.Pages.PSecurityManagement"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:IBService.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PSecurityManagement"
-      Loaded="Page_Loaded">
-    <Page.Resources>
-       
-    </Page.Resources>
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:IBService.Pages"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="450" d:DesignWidth="800"
+	  Title="PSecurityManagement"
+	  Loaded="Page_Loaded">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="75"/>
-        </Grid.RowDefinitions>
-        <!--<TextBlock x:Name="TBFullName"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   Margin="0,10,10,0"/>-->
-        <TabControl x:Name="TCManagment"
-                    DockPanel.Dock="Top"
-                    SelectionChanged="TCManagment_SelectionChanged">
-            <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="TabItem">
-                                <Border Name="Border" Margin="3">
-                                    <ContentPresenter x:Name="ContentSite"
-                                                        VerticalAlignment="Center"
-                                                        HorizontalAlignment="Center"
-                                                        ContentSource="Header"
-                                                        Margin="10,2"/>
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
-                                    </Trigger>
-                                    <Trigger Property="IsSelected" Value="False">
-                                        <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </TabControl.Resources>
-            <TabItem  x:Name="TBVerification">
-                <TabItem.Header >
-                    <TextBlock Text="Верификация"/>
-                </TabItem.Header>
-                <TabItem.Content>
-                    <DataGrid AutoGenerateColumns="False"
-                              x:Name="DGUsersVerification"
-                              ColumnWidth="*"
-                              CanUserAddRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Фамилия"
-                                                Binding="{Binding Surname}"
-                                                IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Имя"
-                                                Binding="{Binding Name}"
-                                                IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Отчество"
-                                                Binding="{Binding Patronymic}"
-                                                IsReadOnly="True"/>
-                            <DataGridTextColumn Header="Должность"
-                                                Binding="{Binding Post}"
-                                                IsReadOnly="True"/>
-                            <DataGridComboBoxColumn Header="Тип пользователя"
-                                                    x:Name="CBType"
-                                                    DisplayMemberPath="Name"
-                                                    SelectedItemBinding="{Binding Type}"/>
-                            <DataGridTextColumn Header="Логин"
-                                                Binding="{Binding Login}"
-                                                IsReadOnly="False"/>
-                            <DataGridTextColumn Header="Пароль"
-                                                Binding="{Binding Password}"/>
-                            <DataGridTextColumn Header="Секретное слово"
-                                                Binding="{Binding SecretWord}"/>
-                            <DataGridCheckBoxColumn Header="Одобрить"
-                                                    Binding="{Binding Approved}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </TabItem.Content>
-            </TabItem>
-            <TabItem x:Name="TBMandats">
-                <TabItem.Header>
-                    <TextBlock Text="Мандаты доступа"/>
-                </TabItem.Header>
-                <TabItem.Content>
-                    <DataGrid AutoGenerateColumns="False"
-                              x:Name="DGUsersMandats"
-                              ColumnWidth="*"
-                              CanUserAddRows="False">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Фамилия"
-                                                Binding="{Binding Surname}"
-                                                IsReadOnly="True"
-                                                Width="70"/>
-                            <DataGridTextColumn Header="Имя"
-                                                Binding="{Binding Name}"
-                                                IsReadOnly="True"
-                                                Width="70"/>
-                            <DataGridTextColumn Header="Отчество"
-                                                Binding="{Binding Patronymic}"
-                                                IsReadOnly="True"
-                                                Width="70"/>
-                            <DataGridTextColumn Header="Должность"
-                                                Width="70"
-                                                Binding="{Binding Post}"
-                                                IsReadOnly="True"/>
-                            <DataGridCheckBoxColumn Binding="{Binding AddData}"
-                                                    Header="Добавление данных"/>
-                            <DataGridCheckBoxColumn Binding="{Binding ViewData}"
-                                                    Header="Просмотр данных"/>
-                            <DataGridCheckBoxColumn Binding="{Binding Reports}"
-                                                    Header="Формирование отчетов"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </TabItem.Content>
-            </TabItem>
-        </TabControl>
-        <Button x:Name="BSave"
-                Content="Одобрить"
-                Click="BSave_Click"
-                Height="20"
-                Width="100"
-                HorizontalAlignment="Center"
-                Grid.Row="1"
-                VerticalAlignment="Center"/>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="75"/>
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="TBFullName"
+				   HorizontalAlignment="Right"
+				   VerticalAlignment="Top"
+				   Margin="0,10,10,0"/>
+		<TabControl x:Name="TCManagment"
+					DockPanel.Dock="Top">
+			<TabControl.Resources>
+				<Style TargetType="TabItem">
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="TabItem">
+								<Border Name="Border" Margin="3">
+									<ContentPresenter x:Name="ContentSite"
+														VerticalAlignment="Center"
+														HorizontalAlignment="Center"
+														ContentSource="Header"
+														Margin="10,2"/>
+								</Border>
+								<ControlTemplate.Triggers>
+									<Trigger Property="IsSelected" Value="True">
+										<Setter TargetName="Border" 
+                                                Property="Background" 
+                                                Value="LightSkyBlue" />
+									</Trigger>
+									<Trigger Property="IsSelected" 
+                                             Value="False">
+										<Setter TargetName="Border" 
+                                                Property="Background" 
+                                                Value="GhostWhite" />
+									</Trigger>
+								</ControlTemplate.Triggers>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</TabControl.Resources>
+			<TabItem  x:Name="TBVerification">
+				<TabItem.Header >
+					<TextBlock Text="Верификация"/>
+				</TabItem.Header>
+				<TabItem.Content>
+					<DataGrid AutoGenerateColumns="False"
+							  x:Name="DGUsersVerification"
+							  ColumnWidth="*"
+							  CanUserAddRows="False">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Фамилия"
+												Binding="{Binding Surname}"
+												IsReadOnly="True"/>
+							<DataGridTextColumn Header="Имя"
+												Binding="{Binding Name}"
+												IsReadOnly="True"/>
+							<DataGridTextColumn Header="Отчество"
+												Binding="{Binding Patronymic}"
+												IsReadOnly="True"/>
+							<DataGridTextColumn Header="Должность"
+												Binding="{Binding Post}"
+												IsReadOnly="True"/>
+							<DataGridComboBoxColumn Header="Тип пользователя"
+													x:Name="CBType"
+													DisplayMemberPath="Name"
+													SelectedItemBinding="{Binding Type}"/>
+							<DataGridTextColumn Header="Логин"
+												Binding="{Binding Login}"
+												IsReadOnly="False"/>
+							<DataGridTextColumn Header="Пароль"
+												Binding="{Binding Password}"/>
+							<DataGridTextColumn Header="Секретное слово"
+												Binding="{Binding SecretWord}"/>
+							<DataGridCheckBoxColumn Header="Одобрить"
+													Binding="{Binding Approved}"/>
+						</DataGrid.Columns>
+					</DataGrid>
+				</TabItem.Content>
+			</TabItem>
+			<TabItem x:Name="TBMandats">
+				<TabItem.Header>
+					<TextBlock Text="Мандаты доступа"/>
+				</TabItem.Header>
+				<TabItem.Content>
+					<DataGrid AutoGenerateColumns="False"
+							  x:Name="DGUsersMandats"
+							  ColumnWidth="*"
+							  CanUserAddRows="False">
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Фамилия"
+												Binding="{Binding Surname}"
+												IsReadOnly="True"
+												Width="70"/>
+							<DataGridTextColumn Header="Имя"
+												Binding="{Binding Name}"
+												IsReadOnly="True"
+												Width="70"/>
+							<DataGridTextColumn Header="Отчество"
+												Binding="{Binding Patronymic}"
+												IsReadOnly="True"
+												Width="70"/>
+							<DataGridTextColumn Header="Должность"
+												Width="70"
+												Binding="{Binding Post}"
+												IsReadOnly="True"/>
+							<DataGridCheckBoxColumn Binding="{Binding AddData}"
+													Header="Добавление данных"/>
+							<DataGridCheckBoxColumn Binding="{Binding ViewData}"
+													Header="Просмотр данных"/>
+							<DataGridCheckBoxColumn Binding="{Binding Reports}"
+													Header="Формирование отчетов"/>
+						</DataGrid.Columns>
+					</DataGrid>
+				</TabItem.Content>
+			</TabItem>
+		</TabControl>
+		<Button x:Name="BSave"
+				Content="Одобрить"
+				Click="BSave_Click"
+				Height="20"
+				Width="100"
+				HorizontalAlignment="Center"
+				Grid.Row="1"
+				VerticalAlignment="Center"/>
 
-    </Grid>
+	</Grid>
 </Page>

@@ -1,18 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GuardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GuardEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Gender" EntityType="GuardModel.Gender" />
+    <EntitySet Name="sysdiagrams" EntityType="GuardModel.sysdiagrams" />
+    <EntitySet Name="Type" EntityType="GuardModel.Type" />
+    <EntitySet Name="User" EntityType="GuardModel.User" />
+    <AssociationSet Name="FK_User_Gender" Association="GuardModel.FK_User_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Type" Association="GuardModel.FK_User_Type">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Gender">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="Self.FK_User_Gender" FromRole="Gender" ToRole="User" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="GuardModel.FK_User_Gender" FromRole="Gender" ToRole="User" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
@@ -23,19 +37,19 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="Self.FK_User_Type" FromRole="Type" ToRole="User" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="GuardModel.FK_User_Type" FromRole="Type" ToRole="User" />
   </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GenderId" Type="Int32" Nullable="false" />
-    <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Post" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TypeId" Type="Int32" />
     <Property Name="SecretWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -46,12 +60,12 @@
     <Property Name="AddData" Type="Boolean" />
     <Property Name="ViewData" Type="Boolean" />
     <Property Name="Reports" Type="Boolean" />
-    <NavigationProperty Name="Gender" Relationship="Self.FK_User_Gender" FromRole="User" ToRole="Gender" />
-    <NavigationProperty Name="Type" Relationship="Self.FK_User_Type" FromRole="User" ToRole="Type" />
+    <NavigationProperty Name="Gender" Relationship="GuardModel.FK_User_Gender" FromRole="User" ToRole="Gender" />
+    <NavigationProperty Name="Type" Relationship="GuardModel.FK_User_Type" FromRole="User" ToRole="Type" />
   </EntityType>
   <Association Name="FK_User_Gender">
-    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
-    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <End Type="GuardModel.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="GuardModel.User" Role="User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Gender">
         <PropertyRef Name="Id" />
@@ -62,8 +76,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_User_Type">
-    <End Role="Type" Type="Self.Type" Multiplicity="0..1" />
-    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <End Type="GuardModel.Type" Role="Type" Multiplicity="0..1" />
+    <End Type="GuardModel.User" Role="User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Type">
         <PropertyRef Name="Id" />
@@ -73,18 +87,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="GuardEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Gender" EntityType="Self.Gender" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Type" EntityType="Self.Type" />
-    <EntitySet Name="User" EntityType="Self.User" />
-    <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
-      <End Role="Gender" EntitySet="Gender" />
-      <End Role="User" EntitySet="User" />
-    </AssociationSet>
-    <AssociationSet Name="FK_User_Type" Association="Self.FK_User_Type">
-      <End Role="Type" EntitySet="Type" />
-      <End Role="User" EntitySet="User" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

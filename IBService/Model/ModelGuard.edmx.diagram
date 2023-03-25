@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ab1651ea2021477e812d222e30347211" Name="Diagram1">
-        <EntityTypeShape EntityType="GuardModel.Gender" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GuardModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="GuardModel.Type" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GuardModel.User" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <AssociationConnector Association="GuardModel.FK_User_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="GuardModel.FK_User_Type" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GuardModel.Gender" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GuardModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2" />
+        <EntityTypeShape EntityType="GuardModel.Type" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GuardModel.User" Width="1.5" PointX="3" PointY="2.25" />
+        <AssociationConnector Association="GuardModel.FK_User_Gender" />
+        <AssociationConnector Association="GuardModel.FK_User_Type" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
